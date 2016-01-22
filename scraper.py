@@ -124,6 +124,8 @@ for block in blocks:
         title = block.find_previous('div', 'dataset-resource-text').text.strip()
         csvMth = title.split()[1][:3]
         csvYr = title.split()[2]
+        if '2015' in csvYr:
+            continue
         csvMth = convert_mth_strings(csvMth.upper())
         data.append([csvYr, csvMth, url])
 
